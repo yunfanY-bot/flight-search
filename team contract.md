@@ -1,6 +1,6 @@
 CS 225 data structure team contract
 
-test
+
 
 Communication
 Meeting: Our team will meet once per week every Tuesday 5-7pm Beijing time using Zoom. Notes will be committed to github.
