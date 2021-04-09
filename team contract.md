@@ -22,3 +22,4 @@ Conflict Resolution: All conflicts within the team will be decided by a Super Sm
 was wrong (Might makes right).
 
 Signature: Jiayu Zhu jiayuz6
+           Yunfan Yang yunfany3
