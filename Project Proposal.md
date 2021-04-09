@@ -8,10 +8,10 @@ Final Project Proposal
 
 4.Timeline
 
-data acquisition
+  data acquisition
 
-data processing
+  data processing
 
-completion of each individual algorithm
+  completion of each individual algorithm
 
-production of final deliverables
+  production of final deliverables
