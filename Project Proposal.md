@@ -7,3 +7,11 @@ Final Project Proposal
 3.Graph Algorithms
 
 4.Timeline
+
+data acquisition
+
+data processing
+
+completion of each individual algorithm
+
+production of final deliverables
