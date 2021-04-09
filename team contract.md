@@ -23,3 +23,4 @@ was wrong (Might makes right).
 
 Signature: Jiayu Zhu jiayuz6
            Yunfan Yang yunfany3
+           Jinrui Hu jinruih2
