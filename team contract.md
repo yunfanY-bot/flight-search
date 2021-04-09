@@ -21,4 +21,4 @@ make sure a weekly deliverable is finished by the end of the week.
 Conflict Resolution: All conflicts within the team will be decided by a Super Smash Bros match, Final Destination, 3 stock no items. The winner will decide who was right and who
 was wrong (Might makes right).
 
-Signature: Jiayu Zhu 
+Signature: Jiayu Zhu jiayuz6
