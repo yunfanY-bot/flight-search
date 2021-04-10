@@ -10,7 +10,7 @@
 ### We will use Dijkstra's algorithm to search for a path of minimum sum of weights(least time, least distance traveled, least money spend). \n By adjusting the weight of the three , we will then search for an optimal considering all three factors. 
 
 ## 4.Timeline
-> * data acquisition
+* data acquisition
 * data processing
 * completion of each individual algorithm
 * production of final deliverables
