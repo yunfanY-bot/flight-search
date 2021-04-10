@@ -18,7 +18,7 @@
 ### Basic setup for git
 ### April 11 - set up initial repository and Makefile
 
-### data acquisition
+### Data acquisition
 ### April 12 - determine and acquire the data we need for the project
 
 ### Data processing
