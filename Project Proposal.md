@@ -1,17 +1,20 @@
-Final Project Proposal 
+# Final Project Proposal 
 
-1.Leading Question
+## 1.Leading Question
+### For a depature city and a detination, we will search for an optimal travel solution considering time, distance and money spent.
+    
 
-2.Dataset Acquisition and Processing
+## 2.Dataset Acquisition and Processing
+### We will use data from Open Flights dataset to build a graph with each edge weighted so that it represents the cost of each travel.
+## 3.Graph Algorithms
+### We will use Dijkstra's algorithm to search for a path of minimum sum of weights(least time, least distance traveled, least money spend). \n By adjusting the weight of the three , we will then search for an optimal considering all three factors. 
 
-3.Graph Algorithms
+## 4.Timeline
 
-4.Timeline
+###data acquisition
 
-    data acquisition
+###data processing
 
-    data processing
+###completion of each individual algorithm
 
-    completion of each individual algorithm
-
-    production of final deliverables
+###production of final deliverables
