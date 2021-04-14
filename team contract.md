@@ -17,7 +17,7 @@ Time Commitment: To ensure an equal distribution of work, each member is expecte
 Conflict Resolution: All conflicts within the team will be decided by rolling dice in the Wechat group. People who gets the biggest number is the winner. If there happens to have a draw, we do this one more time:)
 
 Signature: 
-Jiayu Zhu //  jiayuz6
+Jiayu Zhu // jiayuz6
 Yunfan Yang  // yunfany3
 Jinrui Hu  // jinruih2
 Yixiang Cao // yixiang9
