@@ -36,4 +36,4 @@
 ### May 11 - finish editing presentation and submit
 
 ## 5. Test
-### We will build our own test cases in advance to make sure our code works as desired
+### We will build our own test cases in advance to ensure our code works as desired
