@@ -1,5 +1,10 @@
-name
-location
-city
+int airport_id;
+string name;
+string country;
+string city;
+string iata; //iata code
+string icao; //icao code
+double longitude;
+double latitude;
 
-print
+void print_airport();
