@@ -1,3 +1,5 @@
 name
 location
 city
+
+print
