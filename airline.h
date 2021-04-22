@@ -1,4 +1,5 @@
-depature
-destination
+Airport depature;
+Airport destination;
+bool is_air;
 
-print
+void print_route();
