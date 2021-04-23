@@ -1,6 +1,7 @@
 #include "airport.h"
 #include "route.h"
 #include <vector>
+#include <iostream>
 int main() {
   vector<airport> all_airports;
   //read from .dat files
@@ -15,4 +16,5 @@ int main() {
   for (route each_route : all_routes) {
     each_route.print_route();
   }
+    return 0;
 }
