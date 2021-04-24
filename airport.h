@@ -12,7 +12,10 @@ public:
     std::string icao; //icao code
     double longitude;
     double latitude;
-
+    
+    Airport();
+    Airport(std::string name, std::string city, double lat, double lon, std::string id);
+    
     void print_airport();
 
 };
