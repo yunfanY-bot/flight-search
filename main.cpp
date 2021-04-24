@@ -10,7 +10,8 @@ int main() {
   std::vector<route> all_routes;
   //read from .dat file
   while(1) {
-    std::ifstream infile("");
+    std::ifstream infile("airports.dat.txt");
+    
   }
   all_routes[0].print_route();
   all_routes[1].print_route();

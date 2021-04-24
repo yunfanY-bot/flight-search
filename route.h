@@ -3,10 +3,12 @@
 #include "airport.h"
 class route {
 public:
+    std::string airline;
+    int airline_id;
     airport depature;
-    std::string depature_id;
+    int depature_id;
     airport destination;
-    std::string destination_id;
+    int destination_id;
     bool is_air;
     double distance;
     //double weight;
