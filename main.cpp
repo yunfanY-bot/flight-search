@@ -9,10 +9,9 @@ int main() {
   
   std::vector<route> all_routes;
   //read from .dat file
-  while(1) {
-    std::ifstream infile("airports.dat.txt");
-    
-  }
+  char buf[100];
+  FILE* airports_file = fopen("airports.dat.txt", "r");
+  
   all_routes[0].print_route();
   all_routes[1].print_route();
   return 0;
