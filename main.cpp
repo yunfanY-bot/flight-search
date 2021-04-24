@@ -17,7 +17,6 @@ int main() {
         if (line == "") {
             break;
         }
-          //std::cout << line << std::endl;
         split(line, ',', v);
         v[1] = v[1].substr(1, v[1].length()-2);
         v[2] = v[2].substr(1, v[2].length() - 2);
