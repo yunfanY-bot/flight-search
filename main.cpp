@@ -3,6 +3,19 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+
+void split(const string & s, char c, vector<string> & v) {
+    int i = 0;
+    int j=s.find(c);
+    if (s == "") return;
+    
+    while(j > 0 ) {
+        v.push_back(s.substr(i, j-i));
+        i = ++j;
+        j = s.find(c, j);
+    }
+}
+
 int main() {
   std::vector<airport> all_airports;
   //read from .dat files
