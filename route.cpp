@@ -7,3 +7,7 @@ void route::print_route() {//print all variables of a route
 double route::calculate_distance() {//calculate route distance
 
 }
+
+
+route::route() {}
+route::route(Airport s, Airport d, double w) : source(s), dest(d), weight(w) {}
