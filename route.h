@@ -1,4 +1,4 @@
-#progma once
+#pragma once
 #include <string>
 #include "airport.h"
 class route {
@@ -10,4 +10,4 @@ public:
     //double weight;
 
     void print_route();
-}
+};
