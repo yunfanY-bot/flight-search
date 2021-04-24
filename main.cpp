@@ -42,7 +42,7 @@ int main() {
             break;
         }
         split(line, ',', v);
-        v[1] = v[1].substr(1, v[1].length()-2);
+        v[1] = v[1].substr(1, v[1].length() - 2);
         v[2] = v[2].substr(1, v[2].length() - 2);
         v[4] = v[4].substr(1, v[4].length() - 2);
         try{
