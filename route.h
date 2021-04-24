@@ -12,4 +12,6 @@ public:
     //double weight;
 
     void print_route();
+private:
+    void calculate_distance;
 };

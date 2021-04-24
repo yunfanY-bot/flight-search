@@ -6,7 +6,7 @@ int main() {
   std::vector<airport> all_airports;
   //read from .dat files
   while(1) {
-
+    
   }
   for (airport each_airport : all_airports) {
     each_airport.print_airport();
