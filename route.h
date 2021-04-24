@@ -13,5 +13,5 @@ public:
 
     void print_route();
 private:
-    void calculate_distance;
+    double calculate_distance;
 };
