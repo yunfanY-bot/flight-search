@@ -6,6 +6,17 @@
 int main() {
   std::vector<airport> all_airports;
   //read from .dat files
+  
+  std::vector<route> all_routes;
+  //read from .dat file
+  char buf[100];
+  FILE* airports_file = fopen("airports.dat.txt", "r");
+  
+  all_routes[0].print_route();
+  all_routes[1].print_route();
+  return 0;
+  
+  
   ifstream file;
     file.open("airports.dat");
     string line;
@@ -29,13 +40,4 @@ int main() {
         }
     }
     file.close();
-  
-  std::vector<route> all_routes;
-  //read from .dat file
-  char buf[100];
-  FILE* airports_file = fopen("airports.dat.txt", "r");
-  
-  all_routes[0].print_route();
-  all_routes[1].print_route();
-  return 0;
 }
