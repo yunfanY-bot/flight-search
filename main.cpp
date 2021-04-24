@@ -34,7 +34,7 @@ int main() {
         v[4] = v[4].substr(1, v[4].length() - 2);
         try{
             if (v[4] == "") continue;
-            all_airports.push_back(Airport(v[1], v[2], std::stod(v[6]), std::stod(v[7]), v[4]));
+            all_airports.push_back(airport(v[1], v[2], std::stod(v[6]), std::stod(v[7]), v[4]));
         } catch (std::invalid_argument) {
             continue;
         }
