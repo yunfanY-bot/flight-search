@@ -1,8 +1,11 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "coordinate.h"
 
-class airport {
+
+using namespace std;
+class Airport {
 public:
     int airport_id;
     std::string name;
@@ -10,11 +13,12 @@ public:
     std::string city;
     std::string iata; //iata code
     std::string icao; //icao code
-    double longitude;
-    double latitude;
+    Coordinate cor;
     
     Airport();
-    Airport(std::string name, std::string city, double lat, double lon, std::string id);
+    Airport(int id, std::string name,std::string city
+            , std::string country, string iata
+            , string icao, double lat, double lon);
     
     void print_airport();
 

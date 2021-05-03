@@ -5,9 +5,9 @@ class route {
 public:
     std::string airline;
     int airline_id;
-    airport depature;
+    Airport depature;
     int depature_id;
-    airport destination;
+    Airport destination;
     int destination_id;
     bool is_air;
     double distance;
