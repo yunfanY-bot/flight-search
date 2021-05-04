@@ -19,7 +19,7 @@ void split(const string & s, string c, vector<string> & v) {
 }
 */
 int main() { 
-    Airport cur = Airport(stod("324"), "x", "x", "x", "x", "x", stod("3.12231"), stod("234.23423"));
+    Airport cur = Airport();
     /*
     ifstream file;
     file.open("airports.dat");
