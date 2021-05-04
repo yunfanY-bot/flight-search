@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -35,6 +36,7 @@ int main() {
         v[2] = v[2].substr(1, v[2].length() - 2);
         v[4] = v[4].substr(1, v[4].length() - 2);
         */
+
         try{
             if (v[4] == "") continue;
             Airport cur = Airport(stod(v[0]), v[1], v[2], v[3], v[4], v[5], stod(v[6]), stod(v[7]));

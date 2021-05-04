@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <iostream>
 #include <math.h>
@@ -28,4 +29,14 @@ public:
     }
 
 
+    double calculateDistance(Coordinate other) {
+        double dist;
+        dist = sin(toRad(lat)) * sin(toRad(other.lat)) 
+            + cos(toRad(lat)) * cos(toRad(other.lat)) * cos(toRad(lon - other.lon));
+        dist = acos(dist);
+        //dist = (6371 * pi * dist) / 180;
+        //got dist in radian, no need to change back to degree and convert to rad again.
+        dist = 6371 * dist;
+        return dist;
+    }
 };

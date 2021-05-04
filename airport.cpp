@@ -1,5 +1,7 @@
 #include "airport.h"
 
+using namespace std;
+
 void airport::print_airport() {//print out all the variables of airports
     std::cout<<"name: " <<name<<std::endl;
     std::cout<<"City: "<<city<<std::endl;
@@ -18,8 +20,8 @@ Airport::Airport() {
 
 }
 
-Airport::Airport(int set_id, std::string set_name,std::string set_country
-                , std::string set_city, string set_iata, string set_icao
+Airport::Airport(int set_id, string set_name, string set_country
+                , string set_city, string set_iata, string set_icao
                 , double lat, double lon) {
     airport_id = id;
     name = set_name;
