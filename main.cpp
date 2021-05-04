@@ -39,9 +39,10 @@ int main() {
 
         try{
             if (v[4] == "") continue;
-            Airport cur = Airport(stod(v[0]), v[1], v[2], v[3], v[4], v[5], stod(v[6]), stod(v[7]));
+            Airport cur = Airport(std::stod(v[0]), v[1], v[2], v[3], v[4], v[5]
+                            , std::stod(v[6]), std::stod(v[7]));
             all_airports.push_back(cur);
-        } catch (invalid_argument) {
+        } catch (std::invalid_argument) {
             cout<<"error"<<endl;
         }
     }
