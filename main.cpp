@@ -31,16 +31,15 @@ int main() {
             break;
         }
         split(line, ",", v);
-
         try{
             Airport cur = Airport(std::stod(v[0]), v[1], v[2], v[3], v[4], v[5]
                             , std::stod(v[6]), std::stod(v[7]));
             all_airports.push_back(cur);
-        } catch (std::invalid_argument) {
-            cout<<"error"<<endl;
+        } catch (const std::exception& e) {
+            cout<<stod(v[0])<<v[1]<<endl;;
+            cout<<e.what()<<endl;;
         }
     }
     file.close();
-    cout<<all_airports.size()<<endl;
-    all_airports[2].print_airport();
+    all_airports[200].print_airport();
 }

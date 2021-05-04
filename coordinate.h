@@ -13,4 +13,5 @@ public:
     double toRad(double degree);
     double calculateDistance(double lat1, double long1, double lat2, double long2);
     double calculateDistance(Coordinate other);
+    void print_cor();
 };

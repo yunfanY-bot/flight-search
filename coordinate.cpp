@@ -38,3 +38,8 @@ double Coordinate::calculateDistance(Coordinate other) {
         dist = 6371 * dist;
         return dist;
 }
+
+void Coordinate::print_cor() {
+        cout<<"Lat: "<<lat<<endl;
+        cout<<"Lon: "<<lon<<endl;
+}

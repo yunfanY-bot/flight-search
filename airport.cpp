@@ -6,9 +6,14 @@
 using namespace std;
 
 void Airport::print_airport() {//print out all the variables of airports
+    cout<<"ID: " <<airport_id<<endl;
     cout<<"name: " <<name<<endl;
+    cout<<"country: " <<country<<endl;    
     cout<<"City: "<<city<<endl;
-    cout<<"Country: "<<country<<endl;
+    cout<<"iata: "<<iata<<endl;
+    cout<<"icao: "<<icao<<endl;
+    cor.print_cor();
+
 }
     
 Airport::Airport() {
@@ -22,8 +27,8 @@ Airport::Airport() {
 
 }
 
-Airport::Airport(int set_id, string set_name, string set_country
-                , string set_city, string set_iata, string set_icao
+Airport::Airport(int set_id, string set_name, string set_city
+                , string set_country, string set_iata, string set_icao
                 , double lat, double lon) {
     airport_id = set_id;
     name = set_name;
