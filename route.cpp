@@ -3,6 +3,8 @@
 #include <iostream>
 #include <map>
 
+extern map<string, Airport> the_map;
+
 route::route() {
     airline = "default";
     airline_id = "0";
@@ -25,15 +27,18 @@ route::route(string set_airline, string set_airline_ID, string set_departure_id
     
 }
 
-void route::set_airports_distance(map<string, Airport> the_map) {
+void route::set_airports_distance() {
     depature = the_map[depature_id];
     destination = the_map[destination_id];
+    distance = depature.cor.calculateDistance(destination.cor);
 }
 
 //print all variables of a route
 void route::print_route() {
-    cout<<"depature_id"<<depature_id<<endl;
-    cout<<"destination_id"<<destination_id<<endl;
+    cout<<"depature_id: "<<depature_id<<endl;
+    cout<<"destination_id: "<<destination_id<<endl;
+    cout<<"distance: "<<distance<<endl;
+
 }
 
 //calculate route distance
@@ -52,7 +57,7 @@ void route::split(const string & s, string c, vector<string> & v) {
     }
 }
 
-vector<route> route::parse_routes_from_file(map<string, Airport> the_map) {
+vector<route> route::parse_routes_from_file() {
     ifstream file;
     file.open("routes.dat.txt");
     string line;
@@ -65,14 +70,29 @@ vector<route> route::parse_routes_from_file(map<string, Airport> the_map) {
         split(line, ",", v);
         try{
             route cur = route(v[0], v[1], v[2], v[4]);
-            cur.set_airports_distance(the_map);
+            cur.set_airports_distance();
             all_routes.push_back(cur);
         } catch (const std::exception& e) {
             cout<<e.what()<<endl;
         }
     }
     file.close();
+    all_routes[100].print_route();
     return all_routes;
+}
+
+
+/**
+ * @brief search for a route. it not found, return default route
+ * 
+ * @param depa // the depature iata code 
+ * @param name // the destination iata code
+ * @return  // the route object
+ * 
+ */
+route route::search_route(string depa, string dest) {
+//TODO
+    return route();
 }
 
 

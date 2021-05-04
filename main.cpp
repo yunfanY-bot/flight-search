@@ -8,16 +8,20 @@
 
 using namespace std;
 
+map<string, Airport> the_map;
 
 int main() {
 
-    map<string, Airport> the_map;//maps airport id to airport object
 
     Airport tmp_a;
-    vector<Airport> all_airports = tmp_a.parse_airports_from_file(the_map);
+    vector<Airport> all_airports = tmp_a.parse_airports_from_file();
 
     route tmp_r;
-    vector<route> all_routes = tmp_r.parse_routes_from_file(the_map);
+    vector<route> all_routes = tmp_r.parse_routes_from_file();
+
+    route Beijing_Shanghai = tmp_r.search_route(all_routes);
+    cout<<Beijing_Shanghai.get_distance()<<endl;
+
 }
 
 

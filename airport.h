@@ -21,11 +21,15 @@ public:
     Airport(int id, string name, string city
             , string country, string iata
             , string icao, double lat, double lon);
+
+    Airport(const Airport& other);
+    void copy(const Airport& other);
+    Airport& operator=(const Airport& other);
     
     void print_airport();
 
     //parse form file
-    vector<Airport> parse_airports_from_file(map<string, Airport>);
+    vector<Airport> parse_airports_from_file();
 
     //helper function to split string
     void split(const string & s, string c, vector<string> & v);
