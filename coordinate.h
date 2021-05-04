@@ -8,6 +8,10 @@ class Coordinate {
 public:
     double lat;
     double lon;
+    Coordinate() {
+        lat = 0.0;
+        lon = 0.0;
+    }
     Coordinate(double set_lat, double set_lon) {
         lat = set_lat;
         lon = set_lon;

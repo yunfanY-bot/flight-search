@@ -6,7 +6,7 @@
 #include <string>
 
 using namespace std;
-/*
+
 void split(const string & s, string c, vector<string> & v) {
     int i = 0;
     int j=s.find(c);
@@ -17,10 +17,10 @@ void split(const string & s, string c, vector<string> & v) {
         j = s.find(c, j);
     }
 }
-*/
+
 int main() { 
     Airport cur = Airport();
-    /*
+
     ifstream file;
     file.open("airports.dat");
     string line;
@@ -52,5 +52,5 @@ int main() {
 
     }
     file.close();
-    */
+    all_airports[0].print_airport();
 }
