@@ -6,9 +6,9 @@
 using namespace std;
 
 void Airport::print_airport() {//print out all the variables of airports
-    std::cout<<"name: " <<name<<std::endl;
-    std::cout<<"City: "<<city<<std::endl;
-    std::cout<<"Country: "<<country<<std::endl;
+    cout<<"name: " <<name<<endl;
+    cout<<"City: "<<city<<endl;
+    cout<<"Country: "<<country<<endl;
 }
     
 Airport::Airport() {
