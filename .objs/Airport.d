@@ -1,4 +1,4 @@
-.objs/Airport.o: Airport.cpp airport.h coordinate.h
+.objs/airport.o: airport.cpp airport.h coordinate.h
 
 airport.h:
 

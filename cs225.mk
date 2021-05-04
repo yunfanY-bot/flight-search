@@ -43,16 +43,7 @@ $(EXE): output_msg $(patsubst %.o, $(OBJS_DIR)/%.o, $(OBJS))
 # Ensure .objs/ exists:
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
-	@mkdir -p $(OBJS_DIR)/cs225
-	@mkdir -p $(OBJS_DIR)/cs225/catch
-	@mkdir -p $(OBJS_DIR)/cs225/lodepng
-	@mkdir -p $(OBJS_DIR)/tests
-# mp_traversal specific
-	@mkdir -p $(OBJS_DIR)/imageTraversal
-	@mkdir -p $(OBJS_DIR)/colorPicker
-# mp_mosaic specific
-	@mkdir -p $(OBJS_DIR)/cs225/ColorSpace
-	@mkdir -p $(OBJS_DIR)/util
+
 
 # Rules for compiling source code.
 # - Every object file is required by $(EXE)
@@ -61,24 +52,10 @@ $(OBJS_DIR)/%.o: %.cpp | $(OBJS_DIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 
-# Rules for compiling test suite.
-# - Grab every .cpp file in tests/, compile them to .o files
-# - Build the test program w/ catchmain.cpp from cs225
-OBJS_TEST += $(filter-out $(EXE_OBJ), $(OBJS))
-CPP_TEST = $(wildcard tests/*.cpp)
-CPP_TEST += cs225/catch/catchmain.cpp
-OBJS_TEST += $(CPP_TEST:.cpp=.o)
 
 $(TEST): output_msg $(patsubst %.o, $(OBJS_DIR)/%.o, $(OBJS_TEST))
 	$(LD) $(filter-out $<, $^) $(LDFLAGS) -o $@
 
-# Additional dependencies for object files are included in the clang++
-# generated .d files (from $(DEPFILE_FLAGS)):
--include $(OBJS_DIR)/*.d
--include $(OBJS_DIR)/cs225/*.d
--include $(OBJS_DIR)/cs225/catch/*.d
--include $(OBJS_DIR)/cs225/lodepng/*.d
--include $(OBJS_DIR)/tests/*.d
 
 # Custom Clang version enforcement Makefile rule:
 ccred=$(shell echo -e "\033[0;31m")

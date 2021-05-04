@@ -4,7 +4,7 @@ TEST = test
 
 # Add all object files needed for compiling:
 EXE_OBJ = main.o
-OBJS = main.o Airport.o
+OBJS = coordinate.o main.o airport.o
 
 # Compilation Flags
 CXX = clang++
@@ -25,14 +25,15 @@ output_msg: ; $(CLANG_VERSION_MSG)
 $(EXENAME): output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
-Airport.o: main.cpp Airport.cpp
-	$(CXX) $(CXXFLAGS) main.cpp Airport.cpp
+coordinate.o: main.cpp coordinate.cpp
+	$(CXX) $(CXXFLAGS) main.cpp coordinate.cpp
+
+airport.o: main.cpp airport.cpp
+	$(CXX) $(CXXFLAGS) main.cpp airport.cpp
 
 route.o: main.cpp route.cpp
 	$(CXX) $(CXXFLAGS) main.cpp route.cpp
 
-coordinate.o: main.cpp coordinate.cpp
-	$(CXX) $(CXXFLAGS) main.cpp coordinate.cpp
 
 clean:
 	-rm -f *.o $(EXENAME) test
