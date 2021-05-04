@@ -8,16 +8,13 @@ class Coordinate {
 public:
     double lat;
     double lon;
-
     Coordinate(double set_lat, double set_lon) {
         lat = set_lat;
         lon = set_lon;
     }
-
     double toRad(double degree) {
         return degree/180 * M_PI;
     }
-
     double calculateDistance(double lat1, double long1, double lat2, double long2) {
         double dist;
         dist = sin(toRad(lat1)) * sin(toRad(lat2)) + cos(toRad(lat1)) * cos(toRad(lat2)) * cos(toRad(long1 - long2));
@@ -27,8 +24,6 @@ public:
         dist = 6371 * dist;
         return dist;
     }
-
-
     double calculateDistance(Coordinate other) {
         double dist;
         dist = sin(toRad(lat)) * sin(toRad(other.lat)) 

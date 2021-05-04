@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void split(const string & s, char c, vector<string> & v) {
+void split(const string & s, string c, vector<string> & v) {
     int i = 0;
     int j=s.find(c);
     if (s == "") return;
@@ -18,8 +18,10 @@ void split(const string & s, char c, vector<string> & v) {
     }
 }
 
-int main() {  
-  ifstream file;
+int main() { 
+    Airport cur = Airport(stod("324"), "x", "x", "x", "x", "x", stod("3.12231"), stod("234.23423"));
+    /*
+    ifstream file;
     file.open("airports.dat");
     string line;
     vector<Airport> all_airports;
@@ -30,8 +32,7 @@ int main() {
         if (line == "") {
             break;
         }
-        split(line, ',', v);
-        /*
+        split(line, ",", v);
         v[1] = v[1].substr(1, v[1].length() - 2);
         v[2] = v[2].substr(1, v[2].length() - 2);
         v[4] = v[4].substr(1, v[4].length() - 2);
@@ -43,11 +44,13 @@ int main() {
         } catch (std::invalid_argument) {
             cout<<"error"<<endl;
         }
-        */
+        
         if (v[4] == "") continue;
-        Airport cur = Airport(std::stod(v[0]), v[1], v[2], v[3], v[4], v[5]
-                            , std::stod(v[6]), std::stod(v[7]));
+        Airport cur = Airport(stod(v[0]), v[1], v[2], v[3], v[4], v[5]
+                            , stod(v[6]), stod(v[7]));
         all_airports.push_back(cur);
+
     }
     file.close();
+    */
 }
