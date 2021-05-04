@@ -4,7 +4,7 @@ TEST = test
 
 # Add all object files needed for compiling:
 EXE_OBJ = main.o
-OBJS = coordinate.o main.o airport.o
+OBJS = coordinate.o main.o airport.o route.o
 
 # Compilation Flags
 CXX = clang++

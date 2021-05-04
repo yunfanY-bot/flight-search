@@ -1,19 +1,42 @@
 #pragma once
-#include <string>
 #include "airport.h"
+#include <string>
+#include <fstream>
+#include <iostream>
+#include "coordinate.h"
+#include <vector>
+
+
 class route {
 public:
-    std::string airline;
+    route();
+    route(string set_airline, int set_airline_ID, string set_departure_id, string set_destionation_ID);
+    double get_distance();
+    vector<route> parse_routes_from_file(map<string, Airport>);
+
+    string airline;
     int airline_id;
     Airport depature;
-    int depature_id;
+    string depature_id;
     Airport destination;
-    int destination_id;
+    string destination_id;
     bool is_air;
     double distance;
     //double weight;
 
-    void print_route();
+    
 private:
-    double calculate_distance;
+
+    void set_airports_distance(map<string, Airport> the_map);
+
+    //return the distance of the route
+
+
+    void print_route();
+
+    //parse form file
+
+
+    //helper function to split string
+    void split(const string & s, string c, vector<string> & v);
 };

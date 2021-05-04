@@ -1,7 +1,10 @@
 #include "airport.h"
 #include <string>
+#include <fstream>
 #include <iostream>
+#include <map>
 #include "coordinate.h"
+#include <vector>
 
 using namespace std;
 
@@ -38,4 +41,44 @@ Airport::Airport(int set_id, string set_name, string set_city
     icao = set_icao;
     cor = Coordinate(lat, lon);
 }
+
+void Airport::split(const string & s, string c, vector<string> & v) {
+    int i = 0;
+    int j=s.find(c);
+    if (s == "") return;
+    while(j > 0 ) {
+        v.push_back(s.substr(i, j-i));
+        i = ++j;
+        j = s.find(c, j);
+    }
+}
+
+
+//return the vector of all airports;
+//modify the map of aiport ID and airport object
+vector<Airport> Airport::parse_airports_from_file(map<string, Airport> the_map) {
+    ifstream file;
+    file.open("airports.dat.txt");
+    string line;
+    vector<Airport> all_airports;
+    while (getline(file, line)) {
+        vector<string> v;
+        if (line == "") {
+            break;
+        }
+        split(line, ",", v);
+        try{
+            Airport cur = Airport(std::stod(v[0]), v[1], v[2], v[3], v[4], v[5]
+                            , std::stod(v[6]), std::stod(v[7]));
+            all_airports.push_back(cur);
+            the_map.insert(pair<string, Airport>(cur.iata, cur));
+        } catch (const std::exception& e) {
+            cout<<e.what()<<endl;
+        }
+    }
+    file.close();
+    return all_airports;
+}
+
+
 

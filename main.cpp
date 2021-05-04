@@ -4,42 +4,21 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <map>
 
 using namespace std;
 
-void split(const string & s, string c, vector<string> & v) {
-    int i = 0;
-    int j=s.find(c);
-    if (s == "") return;
-    while(j > 0 ) {
-        v.push_back(s.substr(i, j-i));
-        i = ++j;
-        j = s.find(c, j);
-    }
+
+int main() {
+
+    map<string, Airport> the_map;//maps airport id to airport object
+
+    Airport tmp_a;
+    vector<Airport> all_airports = tmp_a.parse_airports_from_file(the_map);
+
+    route tmp_r;
+    vector<route> all_routes = tmp_r.parse_routes_from_file(the_map);
 }
 
-int main() { 
-    Airport cur = Airport();
-    ifstream file;
-    file.open("airports.dat.txt");
-    string line;
-    vector<Airport> all_airports;
-    vector<route> all_routes;
-    while (getline(file, line)) {
-        vector<string> v;
-        if (line == "") {
-            break;
-        }
-        split(line, ",", v);
-        try{
-            Airport cur = Airport(std::stod(v[0]), v[1], v[2], v[3], v[4], v[5]
-                            , std::stod(v[6]), std::stod(v[7]));
-            all_airports.push_back(cur);
-        } catch (const std::exception& e) {
-            cout<<stod(v[0])<<v[1]<<endl;;
-            cout<<e.what()<<endl;;
-        }
-    }
-    file.close();
-    all_airports[200].print_airport();
-}
+
+
