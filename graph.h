@@ -4,17 +4,14 @@
 #include <unordered_map>
 #include <utility>
 #include <algorithm>
-#include <string>
-#include <cstdlib>
-#include <climits>
-#include <fstream>
+
 #include <iostream>
 #include <iomanip>
 #include <set>
 #include <sstream>
 #include <vector>
 #include "airport.h"
-#include "coordinate.h"
+
 #include "route.h"
 
 using namespace std;
