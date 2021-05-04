@@ -40,7 +40,7 @@ class Graph {
     private:
     bool weighted; //if weighted
     bool directed;
-    mutable unordered_map<Airport, unordered_map<Airport, route>> adjacency_list;
+    mutable unordered_map<Airport, unordered_map<Airport, route>> adjacency;
     bool assertVertexExists(Airport v) const; //check if exists helper func
     bool assertEdgeExists(Airport source, Airport destination) const; // check if exists helper func
 

@@ -5,20 +5,20 @@ Graph::Graph() {
     weighted = true;
     directed = false;
     mutable unordered_map<Airport, unordered_map<Airport, route>>() a;
-    adjacency_list = a;
+    adjacency = a;
 
 
 }
 
 vector<Airport> Graph::getAdjacent(Airport source) const 
 {
-    auto lookup = adjacency_list.find(source);
+    auto lookup = adjacency.find(source);
 
-    if(lookup == adjacency_list.end()){
+    if(lookup == adjacency.end()){
         return vector<Airport>();
     } else {
         vector<Airport> list;
-        unordered_map <Airport, route> & map = adjacency_list[source];
+        unordered_map <Airport, route> & map = adjacency[source];
         for (auto it = map.begin(); it != map.end(); it++)
         {
             list.push_back(it->first);
@@ -30,7 +30,7 @@ vector<Airport> Graph::getAdjacent(Airport source) const
 void Graph::insertVertex(Airport v) 
 {
     removeVertex(v);
-    adjacency_list[v] = unordered_map<Airport, route>();
+    adjacencyt[v] = unordered_map<Airport, route>();
 }
 
 
