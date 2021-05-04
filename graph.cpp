@@ -57,22 +57,3 @@ bool Graph::assertVertexExists(Airport v) const
     return true;
 }
 
-bool Graph::assertEdgeExists(Airport source, Airport destination) const
-{
-    if(assertVertexExists(source) == false)
-        return false;
-    if(adjacency_list[source].find(destination)== adjacency_list[source].end())
-    {
-        return false;
-    }
-    if(!directed)
-    {
-        if (assertVertexExists(destination) == false)
-            return false;
-        if(adjacency_list[destination].find(source)== adjacency_list[destination].end())
-        {
-            return false;
-        }
-    }
-    return true;
-}
