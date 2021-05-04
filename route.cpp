@@ -5,7 +5,7 @@
 
 route::route() {
     airline = "default";
-    airline_id = 0;
+    airline_id = "0";
     depature = Airport(); 
     depature_id = "default"; 
     destination = Airport(); 
@@ -14,7 +14,7 @@ route::route() {
     distance = -1; //uinirtialized distance
 }
 
-route::route(string set_airline, int set_airline_ID, string set_departure_id
+route::route(string set_airline, string set_airline_ID, string set_departure_id
                 , string set_destionation_ID) {
     airline = set_airline;
     airline_id = set_airline_ID;
@@ -64,7 +64,7 @@ vector<route> route::parse_routes_from_file(map<string, Airport> the_map) {
         }
         split(line, ",", v);
         try{
-            route cur = route(v[0], stod(v[1]), v[2], v[4]);
+            route cur = route(v[0], v[1], v[2], v[4]);
             cur.set_airports_distance(the_map);
             all_routes.push_back(cur);
         } catch (const std::exception& e) {

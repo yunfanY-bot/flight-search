@@ -10,12 +10,12 @@
 class route {
 public:
     route();
-    route(string set_airline, int set_airline_ID, string set_departure_id, string set_destionation_ID);
+    route(string set_airline, string set_airline_ID, string set_departure_id, string set_destionation_ID);
     double get_distance();
     vector<route> parse_routes_from_file(map<string, Airport>);
 
     string airline;
-    int airline_id;
+    string airline_id;
     Airport depature;
     string depature_id;
     Airport destination;
