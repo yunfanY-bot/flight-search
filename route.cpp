@@ -87,10 +87,11 @@ vector<route> route::parse_routes_from_file() {
  * 
  * @param depa // the depature iata code 
  * @param name // the destination iata code
+ * @param all_routes // an array containing all the routes
  * @return  // the route object
  * 
  */
-route route::search_route(string depa, string dest) {
+route route::search_route(string depa, string dest, vector<route> all_routes) {
 //TODO
     return route();
 }

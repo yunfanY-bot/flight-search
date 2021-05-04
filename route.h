@@ -13,7 +13,7 @@ public:
     route(string set_airline, string set_airline_ID, string set_departure_id, string set_destionation_ID);
     double get_distance();
     vector<route> parse_routes_from_file();
-    route route::search_route(string, string);
+    route search_route(string, string, vector<route>);
 
     string airline;
     string airline_id;
