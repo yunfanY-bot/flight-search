@@ -21,16 +21,15 @@ void Airport::print_airport() {//print out all the variables of airports
 
 }
     
-Airport::Airport() {
-    airport_id = 0;
-    name = "default";
-    country = "default";
-    city = "default";
-    iata = "default";
-    icao = "default";
-    cor = Coordinate(0, 0);
-
-}
+Airport::Airport() 
+    : airport_id(0)
+    , name("default")
+    , country("default")
+    , city("default")
+    , iata("default")
+    , icao("default")
+    , cor() 
+    { }
 
 Airport::Airport(int set_id, string set_name, string set_city
                 , string set_country, string set_iata, string set_icao

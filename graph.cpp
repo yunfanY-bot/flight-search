@@ -1,17 +1,12 @@
 #include "graph.h"
 
-
-
 const Airport Graph::InvalidVertex = Airport();
 
-Graph::Graph(bool weighted) : weighted(weighted),directed(true)
-{
-}
 
-Graph::Graph(bool weighted, bool directed) : weighted(weighted),directed(directed)
+Graph::Graph(vector<Airport> set_all_airports, vector<route> set_all_routes)
 {
+    all_airports.
 }
-
 
 
 vector<Airport> Graph::getAdjacent(Airport source) const 
@@ -35,6 +30,8 @@ void Graph::insertVertex(Airport a)
     removeVertex(a);
     adjacency[a] = unordered_map<Airport, route>();
 }
+
+/*
 
 Airport Graph::removeVertex(Airport v)
 {
@@ -65,7 +62,7 @@ Airport Graph::removeVertex(Airport v)
     return InvalidVertex;//return empty airport 
 
 }
-
+*/
 
 
 bool Graph::ifVertexExists(Airport v) const
@@ -98,4 +95,20 @@ bool Graph::ifEdgeExists(Airport source, Airport destination) const
         }
     }
     return true;
+}
+
+route getRoutes(Airport source, Airport destination) const
+{
+    vector<route> tmp;
+    for(route route1 : all_routes) {
+        if (route1.depature_id == depa) {
+            tmp.push_back(route1);
+        }
+    }   
+    for(route route1 : tmp) {
+        if (route1.destination_id == dest) {
+            return route1;
+        }
+    }    
+    return route();
 }

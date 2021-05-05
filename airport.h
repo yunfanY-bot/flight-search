@@ -17,7 +17,6 @@ public:
     Coordinate cor;
     
     Airport();
-    
     Airport(int id, string name, string city
             , string country, string iata
             , string icao, double lat, double lon);

@@ -94,7 +94,6 @@ vector<route> route::parse_routes_from_file() {
  */
 route route::search_route(string depa, string dest, vector<route> all_routes) {
     vector<route> tmp;
-    vector<route> multi;
     for(route route1 : all_routes) {
         if (route1.depature_id == depa) {
             tmp.push_back(route1);
