@@ -4,7 +4,7 @@ TEST = test
 
 # Add all object files needed for compiling:
 EXE_OBJ = main.o
-OBJS = coordinate.o main.o airport.o route.o
+OBJS = coordinate.o main.o airport.o route.o graph.o
 
 # Compilation Flags
 CXX = clang++
@@ -33,6 +33,10 @@ airport.o: main.cpp airport.cpp
 
 route.o: main.cpp route.cpp
 	$(CXX) $(CXXFLAGS) main.cpp route.cpp
+
+graph.o: main.cpp graph.cpp
+	$(CXX) $(CXXFLAGS) main.cpp graph.cpp
+
 
 
 clean:
