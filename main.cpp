@@ -21,7 +21,10 @@ int main() {
     vector<route> all_routes = tmp_r.parse_routes_from_file();
 
     route Beijing_Shanghai = tmp_r.search_route("PVG", "PEK", all_routes);
-    cout<<Beijing_Shanghai.get_distance()<<endl;
+    Beijing_Shanghai.print_route();
+
+    route pvg_sfo = tmp_r.search_route("PVG", "SFO", all_routes);
+    pvg_sfo.print_route();
 
 }
 

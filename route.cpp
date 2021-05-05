@@ -37,6 +37,8 @@ void route::set_airports_distance() {
 void route::print_route() {
     cout<<"depature_id: "<<depature_id<<endl;
     cout<<"destination_id: "<<destination_id<<endl;
+    cout<<"airline: "<<airline<<endl;
+    cout<<"airline_id: "<<airline_id<<endl;
     cout<<"distance: "<<distance<<endl;
 
 }
@@ -77,7 +79,6 @@ vector<route> route::parse_routes_from_file() {
         }
     }
     file.close();
-    all_routes[100].print_route();
     return all_routes;
 }
 
@@ -92,7 +93,18 @@ vector<route> route::parse_routes_from_file() {
  * 
  */
 route route::search_route(string depa, string dest, vector<route> all_routes) {
-//TODO
+    vector<route> tmp;
+    vector<route> multi;
+    for(route route1 : all_routes) {
+        if (route1.depature_id == depa) {
+            tmp.push_back(route1);
+        }
+    }   
+    for(route route1 : tmp) {
+        if (route1.destination_id == dest) {
+            return route1;
+        }
+    }    
     return route();
 }
 

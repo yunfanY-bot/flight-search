@@ -14,7 +14,8 @@ public:
     double get_distance();
     vector<route> parse_routes_from_file();
     route search_route(string, string, vector<route>);
-
+    void print_route();
+    
     string airline;
     string airline_id;
     Airport depature;
@@ -33,7 +34,7 @@ private:
     //return the distance of the route
 
 
-    void print_route();
+    
 
     //helper function to split string
     void split(const string & s, string c, vector<string> & v);

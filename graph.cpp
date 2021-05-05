@@ -1,6 +1,6 @@
 #include "graph.h"
 
-
+/*
 Graph::Graph() {
     weighted = true;
     directed = false;
@@ -57,3 +57,4 @@ bool Graph::assertVertexExists(Airport v) const
     return true;
 }
 
+*/
