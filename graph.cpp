@@ -1,6 +1,6 @@
 #include "graph.h"
 
-/*
+
 Graph::Graph() {
     weighted = true;
     directed = false;
@@ -34,20 +34,6 @@ void Graph::insertVertex(Airport a)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 bool Graph::assertVertexExists(Airport v) const
 {
     if (adjacency_list.find(v) == adjacency_list.end())
@@ -56,5 +42,3 @@ bool Graph::assertVertexExists(Airport v) const
     }
     return true;
 }
-
-*/
