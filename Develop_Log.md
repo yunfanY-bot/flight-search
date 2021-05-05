@@ -13,4 +13,4 @@ Week April 26-May 2
 We met on Wednesday via Zoom, and basically we tried to finish our Airport(vertex) and route(edge) class. However, still some functions not implemented. Moreover, we drew a graph to understand the algorithm we are using when meeting.
 
 Week May 3 - May 9
-We finalized our route and Airport class. Coders meet everyday to speed up our final project. Generally we finished our Graph class on Friday. we will try to add test functions and try to see if our main.cpp works. We will aim on the performance of the code in the future days.
+We finalized our route and Airport class. Coders meet everyday to speed up our final project. Generally we finished our Graph class on Friday. we will try to add test functions and try to see if our main.cpp works. We will aim on the performance of the code in the future days. At the same time, the writers in our team start to write the report. 
