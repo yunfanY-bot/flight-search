@@ -61,19 +61,36 @@ bool Graph::ifRouteExists(Airport source, Airport destination) const
 }
 
 pair<int, double> Graph::d_min(map<int, double> the_map) {
-    //TODO;
+    auto b = the_map.begin();
+    for (auto it = the_map.begin(); it != the_map.end(); it++) {
+        if (it->second == -1 && b->second == -1) {
+            continue;
+        } else if (it->second == -1 && b->second != -1) {
+            continue;
+        } else if (it->second != -1 && b->second == -1) {
+            b = it;
+        } else {
+            if (it->second < b->second) {
+                b = it;
+            }
+        }
+    }
+    return *b;
 }
 
-vector<route> Graph::SSP(Airport source, Airport destination) {
+vector<Airport> Graph::SSP(Airport source, Airport destination) {
+    vector<Airport> to_return;
     map<int, double> total_dis;
-    
-    for (Airport each_airport : all_airport) {
-        each_airport.d = -1; //-1 is infinity
-        each_airport.p = -1; //-1 is NULL airport
+    for (Airport each_airport : all_airports) {
+        total_dis[each_airport.airport_id] = -1;
+        each_airport.set_p(-1); //-1 is NULL airport
     }
-    source.d = 0;
-    PriorityQueue Q;
-    
+    total_dis[source.airport_id] = 0;
+    while(!total_dis.empty()) {
+        pair<int, double> min = d_min(total_dis);
+        to_return.push_back(the_id_map[min.first]);
+    }
+
     /*
     foreach (Vertex v : G):
     d[v] = +inf
@@ -90,6 +107,18 @@ vector<route> Graph::SSP(Airport source, Airport destination) {
 
         return vector<route>();
         */
-    return vector<route>();
+
+
+    /*
+    for (Airport each_airport : all_airport) {
+        each_airport.d = -1; //-1 is infinity
+        each_airport.p = -1; //-1 is NULL airport
+    }
+    source.d = 0;
+    PriorityQueue Q;
+    */
+    
+
+    return to_return;
 
 }

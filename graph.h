@@ -32,7 +32,7 @@ class Graph {
     bool insertRoutes(route r);//build route between 2 airports (seems fixed when parsing the txt?)
     route removeRoutes(Airport source, Airport destination);
     route setRoutedistance(Airport source, Airport destination, int distance);//use weight to set distance
-    vector<route> SSP(Airport source, Airport destination);//return a combination of routes that are shortest using Dijakra's 
+    vector<Airport> SSP(Airport source, Airport destination);//return a combination of routes that are shortest using Dijakra's 
     bool ifVertexExists(Airport v) const; //check if exists helper func
     bool ifRouteExists(Airport source, Airport destination) const; // check if exists helper func 如果没有才能insert
     mutable map<int, map<int, double>> adjacency;
