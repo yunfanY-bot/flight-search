@@ -79,7 +79,7 @@ vector<Airport> Graph::SSP(Airport source, Airport destination) {
         predecessor[each_airport.airport_id]; //-1 is NULL airport
     }
     total_dis[source.airport_id] = 0;
-    while(!total_dis.empty()) {
+    for(unsigned i = 0; i < all_airports.size(); i++) {
         pair<int, double> min = d_min(total_dis);
         total_dis.erase(min.first);
         vector<Airport> neighbors = getAdjacent(min.first);
