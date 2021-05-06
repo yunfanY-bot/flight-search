@@ -63,16 +63,8 @@ bool Graph::ifRouteExists(Airport source, Airport destination) const
 pair<int, double> Graph::d_min(map<int, double> the_map) {
     auto b = the_map.begin();
     for (auto it = the_map.begin(); it != the_map.end(); it++) {
-        if (it->second == -1 && b->second == -1) {
-            continue;
-        } else if (it->second == -1 && b->second != -1) {
-            continue;
-        } else if (it->second != -1 && b->second == -1) {
+        if (it->second < b->second) {
             b = it;
-        } else {
-            if (it->second < b->second) {
-                b = it;
-            }
         }
     }
     return *b;
@@ -81,14 +73,32 @@ pair<int, double> Graph::d_min(map<int, double> the_map) {
 vector<Airport> Graph::SSP(Airport source, Airport destination) {
     vector<Airport> to_return;
     map<int, double> total_dis;
+    map<int, int> predecessor;
     for (Airport each_airport : all_airports) {
-        total_dis[each_airport.airport_id] = -1;
-        each_airport.set_p(-1); //-1 is NULL airport
+        total_dis[each_airport.airport_id] = std::numeric_limits< double >::infinity(); // -1 is infinity
+        predecessor[each_airport.airport_id]; //-1 is NULL airport
     }
     total_dis[source.airport_id] = 0;
     while(!total_dis.empty()) {
         pair<int, double> min = d_min(total_dis);
-        to_return.push_back(the_id_map[min.first]);
+        total_dis.erase(min.first);
+        vector<Airport> neighbors = getAdjacent(min.first);
+        for (Airport each_n : neighbors) {
+            if (adjacency[the_id_map[min.first].airport_id][each_n.airport_id]
+                + total_dis[min.first] < total_dis[each_n.airport_id]) {
+                    total_dis[each_n.airport_id] = adjacency[the_id_map[min.first].airport_id][each_n.airport_id]
+                                                    + total_dis[min.first] < total_dis[each_n.airport_id];
+                    predecessor[each_n.airport_id] = min.first;
+                    cout<<each_n.airport_id<<endl;
+                }
+        }
+    }
+    cout<<"here"<<endl;
+    int p = predecessor[destination.airport_id];
+    to_return.push_back(the_id_map[p]);
+    while(p != -1) {
+        p = predecessor[p];
+        to_return.push_back(the_id_map[p]);
     }
 
     /*

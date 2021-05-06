@@ -57,8 +57,11 @@ int main() {
     q.pop();
     cout<<q.top().get_d()<<endl;
     */
+    
 
     Graph a = Graph(all_airports, all_routes);
+    vector<Airport> result = a.SSP(the_map["PVG"], the_map["PEK"]);
+    cout<<result.size()<<endl;
 
 }
 
