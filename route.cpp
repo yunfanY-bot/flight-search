@@ -4,6 +4,8 @@
 #include <map>
 
 extern map<string, Airport> the_map;
+extern map<int, Airport> the_id_map;
+
 
 route::route() {
     airline = "default";
@@ -13,7 +15,7 @@ route::route() {
     destination = Airport(); 
     destination_id = "default"; 
     is_air = true; // default mode
-    distance = -1; //uinirtialized distance
+    distance = -1; //uninitialized distance
 }
 
 route::route(string set_airline, string set_airline_ID, string set_departure_id
@@ -30,7 +32,15 @@ route::route(string set_airline, string set_airline_ID, string set_departure_id
 void route::set_airports_distance() {
     depature = the_map[depature_id];
     destination = the_map[destination_id];
-    distance = depature.cor.calculateDistance(destination.cor);
+    if (depature.iata == "default" || destination.iata == "default" ) {
+        airline = "default";
+        airline_id = "0";
+        distance = -1; //uninitialized distance
+    } else {
+        distance = depature.cor.calculateDistance(destination.cor);
+    }
+
+    
 }
 
 //print all variables of a route

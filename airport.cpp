@@ -9,6 +9,8 @@
 using namespace std;
 
 extern map<string, Airport> the_map;
+extern map<int, Airport> the_id_map;
+
 
 void Airport::print_airport() {//print out all the variables of airports
     cout<<"ID: " <<airport_id<<endl;
@@ -31,17 +33,18 @@ Airport::Airport()
     , cor() 
     { }
 
+
 Airport::Airport(int set_id, string set_name, string set_city
                 , string set_country, string set_iata, string set_icao
-                , double lat, double lon) {
-    airport_id = set_id;
-    name = set_name;
-    city = set_city;
-    country = set_country;
-    iata = set_iata;
-    icao = set_icao;
-    cor = Coordinate(lat, lon);
-}
+                , double lat, double lon)
+    : airport_id(set_id)
+    , name(set_name)
+    , country(set_country)
+    , city(set_city)
+    , iata(set_iata)
+    , icao(set_icao)
+    , cor(lat, lon) 
+    { }
 
 Airport::Airport(const Airport& other)
 {
@@ -53,6 +56,27 @@ Airport& Airport::operator=(const Airport& other)
     copy(other);
     return *this;
 }
+
+
+//WARNING:
+//DO NOT use this method. Only used in min heap
+/*
+bool Airport::operator>(const Airport& other) const {
+    if (d == -1 && other.d == -1) {
+        return false;
+    }
+    if (d == -1 && other.d != -1) {
+        return true;
+    }
+    if (d != -1 && other.d == -1) {
+        return false;
+    }
+    if (d != -1 && other.d != -1) {
+        return d > other.d;
+    }
+    
+}
+*/
 
 void Airport::copy(const Airport& other) {
     airport_id = other.airport_id;
@@ -84,7 +108,6 @@ vector<Airport> Airport::parse_airports_from_file() {
     file.open("airports.dat.txt");
     string line;
     vector<Airport> all_airports;
-    int count = 0;
     while (getline(file, line)) {
         vector<string> v;
         if (line == "") {
@@ -101,7 +124,7 @@ vector<Airport> Airport::parse_airports_from_file() {
                             , std::stod(v[6]), std::stod(v[7]));
             all_airports.push_back(cur);
             the_map.insert(pair<string, Airport>(cur.iata, cur));
-            count++;
+            the_id_map.insert(pair<int, Airport>(cur.airport_id, cur));
         } catch (const std::exception& e) {
             cout<<e.what()<<endl;
         }
@@ -110,5 +133,16 @@ vector<Airport> Airport::parse_airports_from_file() {
     return all_airports;
 }
 
-
+void Airport::set_d(double set_d) {
+    d = set_d;
+}
+void Airport::set_p(int set_p) {
+    p = set_p;
+}
+double Airport::get_d() const {
+    return d;
+}
+int Airport::get_p() const {
+    return p;
+}
 

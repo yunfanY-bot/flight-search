@@ -1,114 +1,90 @@
 #include "graph.h"
-
-const Airport Graph::InvalidVertex = Airport();
+extern map<string, Airport> the_map;
+extern map<int, Airport> the_id_map;
 
 
 Graph::Graph(vector<Airport> set_all_airports, vector<route> set_all_routes)
 {
-    all_airports.
+    all_airports.swap(set_all_airports);
+    all_routes.swap(set_all_routes);
+    build_graph();
+}
+
+void Graph::build_graph() {
+    int count = 0;
+    for (Airport each_airport : all_airports) {
+        map<int, double> a;
+        a.insert(pair<int, double>(each_airport.airport_id, 0));
+        for (Airport each_airport2 : all_airports) {
+            adjacency.insert(pair<int, map<int, double>>(each_airport2.airport_id, a));
+        }
+    }
+    for (route each_route : all_routes) {
+        if (each_route.airline == "default") {// no airport record found for this route
+            continue;
+        } else {
+            if (adjacency[each_route.depature.airport_id][each_route.destination.airport_id] != 0) {
+                continue;
+            }
+            adjacency[each_route.depature.airport_id][each_route.destination.airport_id] = each_route.get_distance();
+        }
+    }
 }
 
 
 vector<Airport> Graph::getAdjacent(Airport source) const 
 {
-    auto lookup = adjacency.find(source);
-    if(lookup == adjacency.end()){
-        return vector<Airport>();
-    } else {
-        vector<Airport> list;
-        unordered_map <Airport, route> & a = adjacency[source];
-        for (auto it = a.begin(); it != a.end(); it++)
-        {
-            list.push_back(it->first);
-        }
-        return list;
-    }
+    return getAdjacent(source.airport_id);
 }
 
-void Graph::insertVertex(Airport a) 
+vector<Airport> Graph::getAdjacent(int id) const 
 {
-    removeVertex(a);
-    adjacency[a] = unordered_map<Airport, route>();
-}
-
-/*
-
-Airport Graph::removeVertex(Airport v)
-{
-
-    if (adjacency.find(v) != adjacency.end())
-    {
-        if(!directed){
-            for (auto it = adjacency[v].begin(); it != adjacency[v].end(); it++)
-            {
-                Airport u = it->first;
-                adjacency[u].erase(v); 
-            }
-            adjacency.erase(v);
-            return v;
+    vector<Airport> to_return;
+    map<int, double> list = adjacency[id];
+    for (auto iter = list.begin(); iter != list.end(); iter++) {
+        if (iter->second != 0) {
+            to_return.push_back(the_id_map[iter->first]);
         }
-        
-        adjacency.erase(v);
-        for(auto it2 = adjacency.begin(); it2 != adjacency.end(); it2++)
-        {
-            Airport u = it2->first;
-            if (it2->second.find(v)!=it2->second.end())
-            {
-                it2->second.erase(v);
-            }
-        }
-        return v;
     }
-    return InvalidVertex;//return empty airport 
-
+    return to_return;
 }
-*/
-
 
 bool Graph::ifVertexExists(Airport v) const
 {
-    if (adjacency.find(v) == adjacency.end())
-    {
-        return false;
-    }
-    return true;
+    return adjacency.find(v.airport_id) != adjacency.end();
 }
 
 
-bool Graph::ifEdgeExists(Airport source, Airport destination) const
+bool Graph::ifRouteExists(Airport source, Airport destination) const
 {
-    if(ifVertexExists(source) == false)
-        return false;
-    if(adjacency[source].find(destination)== adjacency[source].end())
-    {
-        
-        return false;
-    }
-    if(!directed)
-    {
-        if (ifVertexExists(destination) == false)
-            return false;
-        if(adjacency[destination].find(source)== adjacency[destination].end())
-        {
-            
-            return false;
-        }
-    }
-    return true;
+    return adjacency[source.airport_id][destination.airport_id] != 0;
 }
 
-route getRoutes(Airport source, Airport destination) const
-{
-    vector<route> tmp;
-    for(route route1 : all_routes) {
-        if (route1.depature_id == depa) {
-            tmp.push_back(route1);
-        }
-    }   
-    for(route route1 : tmp) {
-        if (route1.destination_id == dest) {
-            return route1;
-        }
-    }    
-    return route();
+vector<route> Graph::SSP(Airport source, Airport destination) {
+    /*
+    for (Airport each_airport : all_airport) {
+        each_airport.d = -1; //-1 is infinity
+        each_airport.p = -1; //-1 is NULL airport
+    }
+    source.d = 0;
+    PriorityQueue Q;
+    */
+    /*
+    foreach (Vertex v : G):
+    d[v] = +inf
+    p[v] = NULL 
+    d[s] = 0
+    PriorityQueue Q // min distance, defined by d[v] 
+    Q.buildHeap(G.vertices())
+    Graph T // "labeled set"
+    repeat n times:
+    Vertex u = Q.removeMin()
+    T.add(u)
+    foreach (Vertex v : neighbors of u not in T):
+    if _______________ < d[v]: d[v] = __________________ p[v] = m
+
+        return vector<route>();
+        */
+    return vector<route>();
+
 }
