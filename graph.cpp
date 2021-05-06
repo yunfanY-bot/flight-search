@@ -60,15 +60,20 @@ bool Graph::ifRouteExists(Airport source, Airport destination) const
     return adjacency[source.airport_id][destination.airport_id] != 0;
 }
 
+pair<int, double> Graph::d_min(map<int, double> the_map) {
+    //TODO;
+}
+
 vector<route> Graph::SSP(Airport source, Airport destination) {
-    /*
+    map<int, double> total_dis;
+    
     for (Airport each_airport : all_airport) {
         each_airport.d = -1; //-1 is infinity
         each_airport.p = -1; //-1 is NULL airport
     }
     source.d = 0;
     PriorityQueue Q;
-    */
+    
     /*
     foreach (Vertex v : G):
     d[v] = +inf

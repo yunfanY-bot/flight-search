@@ -40,38 +40,26 @@ int main() {
     route tmp_r;
     vector<route> all_routes = tmp_r.parse_routes_from_file();
 
-    
-    int count = 0;
+    /*
+    int count = 10;
     priority_queue<Airport, vector<Airport>, CompareAirport> q;
     
     for (Airport each : all_airports) {
-        each.set_d(-1 * count);
-        count++;
+        each.set_d(count);
         q.push(each);
         if (count == 50) {
             break;
         }
     }
-    
+
     cout<<q.top().get_d()<<endl;
     q.pop();
     q.pop();
     cout<<q.top().get_d()<<endl;
-    
-
-
-    /*
-    for (route each : all_routes) {
-        each.print_route();
-    }
     */
-   /*
 
     Graph a = Graph(all_airports, all_routes);
-    int num = 3378;
-    vector<Airport> neighbours = a.getAdjacent(num);
-    cout<<neighbours.size()<<endl;
-    */
+
 }
 
 
