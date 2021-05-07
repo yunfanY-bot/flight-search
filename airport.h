@@ -20,7 +20,7 @@ public:
     Airport();
     Airport(int id, string name, string city
             , string country, string iata
-            , string icao, double lat, double lon);
+            , string icao, long double lat, long double lon);
 
     Airport(const Airport& other);
     void copy(const Airport& other);
@@ -41,14 +41,14 @@ public:
     //helper function to split string
     void split(const string & s, string c, vector<string> & v);
 
-    void set_d(double);
+    void set_d(long double);
     void set_p(int);
-    double get_d() const;
+    long double get_d() const;
     int get_p() const;
 
     private:
     //warning: do NOT use following fields. Only used for minheap;
-    double d; //cumulative distance used in SSP
+    long double d; //cumulative distance used in SSP
     int p; //predecessor airport id
     //WARNING!! DO NOT use d and p;
 

@@ -9,17 +9,17 @@ Coordinate::Coordinate() {
     lon = 0.0;
 }
 
-Coordinate::Coordinate(double set_lat, double set_lon) {
+Coordinate::Coordinate(long double set_lat, long double set_lon) {
         lat = set_lat;
         lon = set_lon;
 }
 
-double Coordinate::toRad(double degree) {
+long double Coordinate::toRad(long double degree) {
         return degree/180 * M_PI;
 }
 
-double Coordinate::calculateDistance(double lat1, double long1, double lat2, double long2) {
-        double dist;
+long double Coordinate::calculateDistance(long double lat1, long double long1, long double lat2, long double long2) {
+        long double dist;
         dist = sin(toRad(lat1)) * sin(toRad(lat2)) + cos(toRad(lat1)) * cos(toRad(lat2)) * cos(toRad(long1 - long2));
         dist = acos(dist);
         //dist = (6371 * pi * dist) / 180;
@@ -28,8 +28,8 @@ double Coordinate::calculateDistance(double lat1, double long1, double lat2, dou
         return dist;
 }
 
-double Coordinate::calculateDistance(Coordinate other) {
-        double dist;
+long double Coordinate::calculateDistance(Coordinate other) {
+        long double dist;
         dist = sin(toRad(lat)) * sin(toRad(other.lat)) 
             + cos(toRad(lat)) * cos(toRad(other.lat)) * cos(toRad(lon - other.lon));
         dist = acos(dist);

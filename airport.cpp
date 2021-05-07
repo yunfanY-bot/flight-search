@@ -13,7 +13,7 @@ extern map<int, Airport> the_id_map;
 
 
 void Airport::print_airport() {//print out all the variables of airports
-    cout<<"ID: " <<airport_id<<endl;
+    cout<<"Airport ID: " <<airport_id<<endl;
     cout<<"name: " <<name<<endl;
     cout<<"country: " <<country<<endl;    
     cout<<"City: "<<city<<endl;
@@ -36,7 +36,7 @@ Airport::Airport()
 
 Airport::Airport(int set_id, string set_name, string set_city
                 , string set_country, string set_iata, string set_icao
-                , double lat, double lon)
+                , long double lat, long double lon)
     : airport_id(set_id)
     , name(set_name)
     , country(set_country)
@@ -133,13 +133,13 @@ vector<Airport> Airport::parse_airports_from_file() {
     return all_airports;
 }
 
-void Airport::set_d(double set_d) {
+void Airport::set_d(long double set_d) {
     d = set_d;
 }
 void Airport::set_p(int set_p) {
     p = set_p;
 }
-double Airport::get_d() const {
+long double Airport::get_d() const {
     return d;
 }
 int Airport::get_p() const {

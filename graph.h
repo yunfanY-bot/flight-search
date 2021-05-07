@@ -35,13 +35,14 @@ class Graph {
     vector<Airport> SSP(Airport source, Airport destination);//return a combination of routes that are shortest using Dijakra's 
     bool ifVertexExists(Airport v) const; //check if exists helper func
     bool ifRouteExists(Airport source, Airport destination) const; // check if exists helper func 如果没有才能insert
-    mutable map<int, map<int, double>> adjacency;
+    mutable map<int, map<int, long double>> adjacency;
     vector<Airport> getAdjacent(int id) const;
+    pair<int, long double> d_min(map<int, long double> the_map);
     private:
     vector<Airport> all_airports;
     vector<route> all_routes;
     void build_graph();
-    pair<int, double> d_min(map<int, double> the_map);
+    
     
     
     

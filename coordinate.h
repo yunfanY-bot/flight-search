@@ -6,12 +6,12 @@
 using namespace std;
 class Coordinate {
 public:
-    double lat;
-    double lon;
+    long double lat;
+    long double lon;
     Coordinate();
-    Coordinate(double set_lat, double set_lon);
-    double toRad(double degree);
-    double calculateDistance(double lat1, double long1, double lat2, double long2);
-    double calculateDistance(Coordinate other);
+    Coordinate(long double set_lat, long double set_lon);
+    long double toRad(long double degree);
+    long double calculateDistance(long double lat1, long double long1, long double lat2, long double long2);
+    long double calculateDistance(Coordinate other);
     void print_cor();
 };

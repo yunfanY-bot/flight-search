@@ -54,7 +54,7 @@ void route::print_route() {
 }
 
 //calculate route distance
-double route::get_distance() {
+long double route::get_distance() {
     return distance;
 }
 
