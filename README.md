@@ -42,7 +42,7 @@ Then enter the destination airport IATA code, and wait for a few seconds you wil
 
 
 
-/var/folders/15/l5jdzc910qj5f48k467hcmgh0000gn/T/TemporaryItems/NSIRD_screencaptureui_NaQAWF/Screen Shot 2021-05-08 at 2.34.57 PM.png
+
 
 
 
