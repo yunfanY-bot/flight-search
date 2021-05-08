@@ -41,7 +41,7 @@ Then enter the destination airport IATA code, and wait for a few seconds you wil
 ## Sample output
 
 
-![image] (https://github-dev.cs.illinois.edu/cs225-sp21/yunfany3-yixiang9-jinruih2-jiayuz6/blob/master/sampleout.png)
+![image](https://github-dev.cs.illinois.edu/cs225-sp21/yunfany3-yixiang9-jinruih2-jiayuz6/blob/master/sampleout.png)
 
 
 
