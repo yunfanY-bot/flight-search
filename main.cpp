@@ -17,7 +17,9 @@ map<int, Airport> the_id_map;
 int main() {
 
     cout<<"Parsing data..."<<endl;
+    //create airport instance
     Airport tmp_a;
+    //start parsing file
     vector<Airport> all_airports = tmp_a.parse_airports_from_file();
 
     route tmp_r;
@@ -33,6 +35,7 @@ int main() {
 
         cout<<"Please type depature airport IATA code (input q to quit):"<<endl;
         cin>>dep;
+        //if user pressed  q, quit the program
         if (dep == "q") {
             return 1;
         }
@@ -42,6 +45,7 @@ int main() {
             return 1;
         }
 
+        //if no mapping found, this airport does not exist
         if (the_map[dep].airport_id == 0 || the_map[des].airport_id == 0) {
             cout<<"No such airport!"<<endl;
             return 1;
@@ -49,6 +53,7 @@ int main() {
 
         cout<<"Searching for route..."<<endl;
 
+        //search for shortest path
         vector<Airport> result = a.SSP(the_map[dep], the_map[des]);
 
         cout<<""<<endl;
@@ -60,12 +65,15 @@ int main() {
         for (int i = result.size() - 1; i >= 0; i--) {
             long double cur_d = 0;
             if (i == 0) {
+                //calculate intermediate route distance
                 cur_d = tmp_r.search_route(result[i].iata, des, all_routes).get_distance();
             } else {
+                //calculate the final jump distance
                 cur_d = tmp_r.search_route(result[i].iata, result[i-1].iata, all_routes).get_distance();
             }
+            // total distance
             total_d += cur_d;
-
+            //some print formatting
             result[i].print_airport();
             cout<<"      |"<<endl;
             cout<<"      |"<<endl;
@@ -74,7 +82,7 @@ int main() {
             cout<<"      |"<<endl;
         }
         the_map[des].print_airport();
-
+        
         cout<<""<<endl;
         cout<<"-------------------------------"<<endl;
         cout<<"Total Distance is:  "<<endl;

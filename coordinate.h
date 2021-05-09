@@ -8,10 +8,14 @@ class Coordinate {
 public:
     long double lat;
     long double lon;
+    //default constructor
     Coordinate();
+    // constructor
     Coordinate(long double set_lat, long double set_lon);
+    //helper func to convert angle
     long double toRad(long double degree);
-    long double calculateDistance(long double lat1, long double long1, long double lat2, long double long2);
+    //helper func to calculate distance of two points
     long double calculateDistance(Coordinate other);
+    //print
     void print_cor();
 };
