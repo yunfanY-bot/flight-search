@@ -2,7 +2,7 @@ Our program works as intended.
 
 For example:
 
-we input LAX as the departure airport and PVG as the destination airport,
+## we input LAX as the departure airport and PVG as the destination airport,
 
 it shows that
 
@@ -50,9 +50,15 @@ Total Distance is:
 
 
 
-BUT, if we input lax and PVG, it will show 
+## BUT, if we input lax and PVG, it will show 
 
 No such airport!
+
+Funny discovery we found out is that if we set the departure airport as PVG (Shanghai) and the destination airport as HGH (Hangzhou), 
+
+it shows the route is PVG -> FOC (Fuzhou) -> HGH, which is redundant. In fact, Shanghai is too close to Hangzhou, and it is supposed to travel by train instead of
+
+by flight. In reality, no one would actually take the flight to Hangzhou from Shanghai.
 
 
 
