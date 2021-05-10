@@ -6,7 +6,6 @@ we input LAX as the departure airport and PVG as the destination airport,
 
 it shows that
 
->>>>>>>>>>>>>>Result<<<<<<<<<<<<<<
 Airport ID: 3484
 
 name: Los Angeles International Airport
@@ -45,12 +44,15 @@ Lat: 31.1434
 
 Lon: 121.805
 
--------------------------------
 Total Distance is:  
 
 10415.3 KM 
 
-BUT, if we input lax, it will show
+
+
+BUT, if we input lax and PVG, it will show 
+
+No such airport!
 
 
 
