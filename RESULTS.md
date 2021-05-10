@@ -2,7 +2,7 @@ Our program works as intended.
 
 For example:
 
-## we input LAX as the departure airport and PVG as the destination airport,
+## We input LAX as the departure airport and PVG as the destination airport,
 
 it shows that
 
@@ -55,7 +55,7 @@ Total Distance is:
 No such airport!
 
 
-## Funny discovery is that 
+## Funny discovery
 
 if we set the departure airport as PVG (Shanghai) and the destination airport as HGH (Hangzhou), 
 
