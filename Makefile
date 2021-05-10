@@ -20,8 +20,6 @@ include cs225.mk
 
 all : $(EXENAME)
 
-output_msg: ; $(CLANG_VERSION_MSG)
-
 $(EXENAME): output_msg $(OBJS)
 	$(LD) $(OBJS) $(LDFLAGS) -o $(EXENAME)
 
@@ -39,5 +37,3 @@ graph.o: main.cpp graph.cpp
 
 
 
-clean:
-	-rm -f *.o $(EXENAME) test

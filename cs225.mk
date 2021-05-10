@@ -74,13 +74,7 @@ CLANG_VERSION_MSG = $(warning $(ccyellow) Looks like you are not on EWS. Be sure
 endif
 endif
 
-output_msg: ; $(CLANG_VERSION_MSG)
 
 # Standard C++ Makefile rules:
-clean:
-	rm -rf $(EXE) $(TEST) $(OBJS_DIR) $(CLEAN_RM) *.o *.d
-
-tidy: clean
-	rm -rf doc
 
 .PHONY: all tidy clean output_msg
