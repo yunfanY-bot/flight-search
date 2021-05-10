@@ -54,11 +54,12 @@ Total Distance is:
 
 No such airport!
 
-Funny discovery we found out is that if we set the departure airport as PVG (Shanghai) and the destination airport as HGH (Hangzhou), 
 
-it shows the route is PVG -> FOC (Fuzhou) -> HGH, which is redundant. In fact, Shanghai is too close to Hangzhou, and it is supposed to travel by train instead of
+## Funny discovery is that 
 
-by flight. In reality, no one would actually take the flight to Hangzhou from Shanghai.
+if we set the departure airport as PVG (Shanghai) and the destination airport as HGH (Hangzhou), 
+
+it shows the route is PVG -> FOC (Fuzhou) -> HGH, which is redundant. In fact, Shanghai is too close to Hangzhou, and it is supposed to travel by train instead of by flight. In reality, no one would actually take the flight to Hangzhou from Shanghai:)
 
 
 
