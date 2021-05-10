@@ -50,7 +50,7 @@ Total Distance is:
 
 
 
-## BUT, if we input lax and PVG, it will show 
+## BUT, if we input lax instead of LAX, it will show 
 
 No such airport!
 
