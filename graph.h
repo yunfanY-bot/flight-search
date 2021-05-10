@@ -28,6 +28,10 @@ class Graph {
     //search for the shortest path given a source and a destination airport Dijakra algorithm
     vector<Airport> SSP(Airport source, Airport destination);
 
+    
+    //landmark algorithm
+    vector<Airport> landmarkPath(Airport start, Airport middle, Airport end);
+
     private:
     //the adjacency matrix
     //instead of <airport, map<airport, route>> to store objects directly
@@ -44,6 +48,9 @@ class Graph {
     pair<int, long double> d_min(map<int, long double> the_map);
     //build graph, once and for all
     void build_graph();
+
+    
+    
     
     
     

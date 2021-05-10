@@ -149,3 +149,17 @@ vector<Airport> Graph::SSP(Airport source, Airport destination) {
     }
     return to_return;
 }
+
+
+
+
+
+
+vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
+    vector<Airport> a = SSP(start,middle);
+    vector<Airport> b = SSP(middle, end);
+    vector<Airport> d;
+    d.insert(d.end(), a.begin(), a.end());
+    d.insert(d.end(), b.begin(), b.end());
+    return d;
+}
