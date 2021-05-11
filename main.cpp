@@ -47,8 +47,33 @@ int main() {
 
         //if no mapping found, this airport does not exist
         if (the_map[dep].airport_id == 0 || the_map[des].airport_id == 0) {
-            cout<<"No such airport!"<<endl;
-            return 1;
+            cout<<"Wrong airport code!"<<endl;
+            continue;
+        }
+        //if use input same place for destination and depature
+        if (dep == des) {
+            cout<<"Invalid input!"<<endl;
+            continue;
+        }
+
+        
+        bool dep_exist = false;
+        for (route each : all_routes) {
+            if (each.depature_id == dep) {
+                dep_exist = true;
+            }
+        }
+        bool des_exist = false;
+        for (route each : all_routes) {
+            if (each.destination_id == des) {
+                des_exist = true;
+            }
+        }
+        //The case airport exist but route information not found
+        if (!dep_exist || !des_exist) {
+            cout<<"One of them is a Ghost Airport!"<<endl;
+            cout<<"(Airport exist but route information not found)"<<endl;
+            continue;
         }
 
         cout<<"Searching for route..."<<endl;
