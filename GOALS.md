@@ -35,7 +35,7 @@ Landmark algorithm
 
 Given the departure and destination airports as inputs from the user, the program will output the connecting flights for the shortest total distance if the inputs and outputs are valid 3-letter IATA codes. If inputs are not valid, it will show “No such airport!”. To quit the program, simply type “q”.
 
-## Timeline:
+## Timeline
 
 Week April 19-25, we finished parsing airports and routes from the file that the dataset provides. 
 
