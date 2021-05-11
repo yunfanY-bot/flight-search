@@ -13,6 +13,10 @@ Using data structure graph
 
 To build the graph, we use Adjacency Matrix to store airport IDs and Route Distances and use a map to link id to airport objects.
 
+## Traversal:
+
+
+
 ## Shortest Path Algorithms:
 
 Dijkstra’s algorithm
