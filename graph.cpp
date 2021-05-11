@@ -149,7 +149,14 @@ vector<Airport> Graph::SSP(Airport source, Airport destination) {
     }
     return to_return;
 }
-
+/**
+ * @brief      find the shortest path from start, passing through middle then arriving at end.
+ *             if you definitely want to pass through one airport, this function helps
+ * @param start  depature airport
+ * @param middle the passed throught airport
+ * @param end    the destination airport
+ * @return a vector of all airports in the shortest path
+ */
 vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
     vector<Airport> a = SSP(start,middle);
     vector<Airport> b = SSP(middle, end);
