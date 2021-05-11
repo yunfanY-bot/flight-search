@@ -150,11 +150,6 @@ vector<Airport> Graph::SSP(Airport source, Airport destination) {
     return to_return;
 }
 
-
-
-
-
-
 vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
     vector<Airport> a = SSP(start,middle);
     vector<Airport> b = SSP(middle, end);
@@ -162,4 +157,57 @@ vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
     d.insert(d.end(), a.begin(), a.end());
     d.insert(d.end(), b.begin(), b.end());
     return d;
+}
+
+/**
+ * @brief     //traverse all airports given a starting place, you either traverse all or don't traverse
+ * @param source // source airport
+ * @return //a vector of all airports traversed
+ */
+vector<int> Graph::spfs(Airport source) {
+    //record the current total distance of the current node
+    map<int, long double> total_dis;
+    //record the predecessor of the current node
+    map<int, int> predecessor;
+    //visited node
+    vector<int> visited;
+    //source is visited
+    visited.push_back(source.airport_id);
+    for (Airport each_airport : all_airports) {
+        //initialize total distance and predecessor
+        total_dis[each_airport.airport_id] = std::numeric_limits< long double >::infinity(); // -1 is infinity
+        predecessor[each_airport.airport_id] = -1; //-1 is NULL airport
+    }
+    total_dis[source.airport_id] = 0;
+    for(unsigned i = 0; i < all_airports.size(); i++) {
+        pair<int, long double> min = d_min(total_dis);
+        int min_id = min.first;
+        long double cur_dis = min.second;
+        total_dis.erase(min.first);
+        //set as visited
+        visited.push_back(min_id);
+        //get adjacent nodes
+        vector<Airport> neighbors = getAdjacent(min_id);
+        for (Airport each_n : neighbors) {
+            bool trigger = false;
+            for (int a : visited) {
+                if (a == each_n.airport_id) {
+                    //if visited, set trigger
+                    trigger = true;
+                }
+            }
+            if (trigger) {
+                //ignore this node if visited
+                continue;
+            }
+            if (adjacency[min_id][each_n.airport_id]
+                + cur_dis < total_dis[each_n.airport_id]) {
+                    //update shortest total distance of current node
+                    total_dis[each_n.airport_id] = adjacency[min_id][each_n.airport_id]
+                                                    + cur_dis;
+                    predecessor[each_n.airport_id] = min_id;
+                }
+        }
+    }
+    return visited;
 }

@@ -31,6 +31,8 @@ class Graph {
     
     //landmark algorithm
     vector<Airport> landmarkPath(Airport start, Airport middle, Airport end);
+    //traverse all airports given a starting place, you either traverse all or don't traverse
+    vector<int> spfs(Airport source);
 
     private:
     //the adjacency matrix
