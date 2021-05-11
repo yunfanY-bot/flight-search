@@ -13,11 +13,13 @@ Using data structure graph
 
 To build the graph, we use Adjacency Matrix to store airport IDs and Route Distances and use a map to link id to airport objects.
 
-## Traversal:
+## Traversal
 
+SPFS Traversal
 
+--Given a starting place, we either traverse all or don't traverse.
 
-## Shortest Path Algorithms:
+## Shortest Path Algorithms
 
 Dijkstra’s algorithm
 
@@ -25,7 +27,7 @@ Dijkstra’s algorithm
 
 --We implement Dijkstra’s algorithm to get the shortest path between 2 airports based on the shortest distance we just calculated.
 
-## Final Deliverable:
+## Final Deliverable
 
 Given the departure and destination airports as inputs from the user, the program will output the connecting flights for the shortest total distance if the inputs and outputs are valid 3-letter IATA codes. If inputs are not valid, it will show “No such airport!”. To quit the program, simply type “q”.
 
