@@ -91,7 +91,7 @@ pair<int, long double> Graph::d_min(map<int, long double> the_map) {
 /**
  * @brief search for the shortest path given a source and a destination airport
  * @param source // source airport
- * @param source // destination
+ * @param destination // destination
  * @return a vector of all airports included in the shortest path
  */
 vector<Airport> Graph::SSP(Airport source, Airport destination) {
@@ -152,8 +152,8 @@ vector<Airport> Graph::SSP(Airport source, Airport destination) {
 /**
  * @brief      find the shortest path from start, passing through middle then arriving at end.
  *             if you definitely want to pass through one airport, this function helps
- * @param start  depature airport
- * @param middle the passed throught airport
+ * @param start  the depature airport
+ * @param middle the middle-passed airport
  * @param end    the destination airport
  * @return a vector of all airports in the shortest path
  */
@@ -168,7 +168,7 @@ vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
 
 /**
  * @brief      traverse all airports given a starting place, you either traverse all or don't traverse.
- *             TO use this traversal, simply iterate thought the vector 
+ *             To use this traversal, simply iterate thought the vector 
  *             and use the_id_map to get the actual airport object
  * @param source  source airport
  * @return a vector of all airports traversed
