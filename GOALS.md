@@ -17,7 +17,7 @@ To build the graph, we use Adjacency Matrix to store airport IDs and Route Dista
 
 SPFS Traversal
 
---Given a starting place, we either traverse all or don't traverse.
+--Given a starting place, we either traverse all or don't traverse and return a vector containing all traversed airports.
 
 ## Shortest Path Algorithms
 
@@ -26,6 +26,10 @@ Dijkstra’s algorithm
 --We set longitude and latitude coordinates of airports to calculate the distance between two airports, and this is how we determine the weight of edges.
 
 --We implement Dijkstra’s algorithm to get the shortest path between 2 airports based on the shortest distance we just calculated.
+
+Landmark algorithm
+
+--Similar to Dijkstra's algorithm, we implement a landmark algorithm to find the shortest path between two airports when it passes through a third landmark airport.
 
 ## Final Deliverable
 
@@ -37,4 +41,4 @@ Week April 19-25, we finished parsing airports and routes from the file that the
 
 Week April 26-May 2, we finished building our graph by using adjacency matrix and mapping it to airports.
 
-Week May 3-9, we finished Dijkstra’s algorithm to find the shortest path between two airports, and the whole project has been completed.
+Week May 3-9, we finished Dijkstra’s algorithm and Landmark algorithm to find the shortest path between two airports, and the whole project has been completed.
