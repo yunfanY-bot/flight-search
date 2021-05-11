@@ -168,7 +168,7 @@ vector<Airport> Graph::landmarkPath(Airport start, Airport middle, Airport end){
 
 /**
  * @brief      traverse all airports given a starting place, you either traverse all or don't traverse.
- *             To use this traversal, simply iterate thought the vector 
+ *             To use this traversal, simply iterate throught the vector 
  *             and use the_id_map to get the actual airport object
  * @param source  source airport
  * @return a vector of all airports traversed
