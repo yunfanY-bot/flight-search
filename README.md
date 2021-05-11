@@ -28,10 +28,13 @@ To download our program, please copy and paste the following line to your termin
 Once you finish downloading and setups, go to the directory of our project:
     
     cd cs225finalproject
+
+(If you are on Mac, you may need to remove the .objs file from the directory before running our program)
+
     make
     ./final
     
-And now you should see "Please type departure airport IATA code (input q to quit)" in the terminal:
+It may takes 20s for our program to build graph, then you will see "Please type departure airport IATA code (input q to quit)" in the terminal:
 
 Open airports.dat.txt, enter IATA codes (3-letter codes) of desired airports (eg. Los Angeles->LAX, remember, this has to be CAPITALIZED, lax will not be a valid code). Invalid airports will be filtered by our program.
 
@@ -48,7 +51,7 @@ Then enter the destination airport IATA code, and wait for a few seconds you wil
 
 
 
-# Here is the link to our presentation!
+## Here is the link to our presentation!
 
 # Hope you enjoy our project!
 
