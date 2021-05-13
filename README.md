@@ -29,7 +29,7 @@ Once you finish downloading and setups, go to the directory of our project:
     
     cd cs225finalproject
 
-(If you are on Mac, you may need to remove the .objs file from the directory before running our program)
+(If make command does not succeed, you may need to remove the .objs file from the directory before running our program)
 
     make
     ./final
