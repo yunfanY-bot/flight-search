@@ -1,12 +1,4 @@
-# Final Project-Optimal Travel Solver
-
-## Group members
-
-### Jiayu Zhu --jiayuz6
-### Yunfan Yang --yunfany3
-### Jinrui Hu --jinruih2
-### Yixiang Cao --yixiang9
-
+Optimal Travel Solver
 
 
 
